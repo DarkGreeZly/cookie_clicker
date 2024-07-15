@@ -7,7 +7,12 @@
                   <img src="https://i.pravatar.cc/40?img=70" class="w-[40px] rounded-full">
                   <p class="text-s font-bold">User name</p>
               </div>
-
+                <button class="py-4 px-6 bg-emerald-600 text-white rounded-lg hover:bg-emerald-500">
+                  Save
+                </button>
+                <button class="py-4 px-6 bg-emerald-600 text-white rounded-lg hover:bg-emerald-500">
+                  Load
+                </button>
               <!-- <div class="menu-center flex space-x-12" v-if="userStore.user.isAuthenticated"> -->
                   <!-- <RouterLink to="/feed" class="hover:text-purple-700">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">

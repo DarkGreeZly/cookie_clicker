@@ -5,3 +5,21 @@
     </button>
   </main>
 </template>
+
+<script>
+import axios from 'axios'
+
+const Telegram = window.Telegram.WebApp;
+
+export default {
+  name: 'HomeView',
+
+  data() {
+    return {
+      telegram_id: '',
+      user_name: '',
+    }
+  }
+
+}
+</script>
