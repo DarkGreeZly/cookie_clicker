@@ -4,7 +4,7 @@
           <div class="flex items-center justify-between">
               <div class="menu-left">
                   <!-- <a href="#" class="text-xl">Cookie Clicker</a> -->
-                  <img src="https://i.pravatar.cc/40?img=70" class="w-[40px] rounded-full">
+                  <!-- <img src="https://i.pravatar.cc/40?img=70" class="w-[40px] rounded-full"> -->
                   <p class="text-s font-bold">User name</p>
               </div>
                 <button class="py-4 px-6 bg-emerald-600 text-white rounded-lg hover:bg-emerald-500">

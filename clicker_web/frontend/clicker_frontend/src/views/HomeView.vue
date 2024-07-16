@@ -19,6 +19,15 @@ export default {
       telegram_id: '',
       user_name: '',
     }
+  },
+  beforeMount() {
+    this.create_user()
+  },
+
+  methods: {
+    async create_user() {
+      console.log('telegram data', Telegram.initDataUnsafe.user)
+    }
   }
 
 }
