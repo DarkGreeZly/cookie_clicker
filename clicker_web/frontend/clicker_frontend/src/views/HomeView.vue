@@ -9,7 +9,6 @@
 <script>
 import axios from 'axios'
 
-const Telegram = window.Telegram.WebApp;
 
 export default {
   name: 'HomeView',
@@ -26,7 +25,7 @@ export default {
 
   methods: {
     async create_user() {
-      console.log('telegram data', Telegram.initDataUnsafe.user)
+      
     }
   }
 

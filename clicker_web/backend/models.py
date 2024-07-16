@@ -1,12 +1,15 @@
 from sqlalchemy import Column, String, Integer
 
-from .database import Base
+from .database import Base, engine
 
 
 class User(Base):
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True)
-    name = Column(String)
-    telegram_id = Column(String)
+    user_name = Column(String)
+    hashed_password = Column(String)
     score = Column(Integer, default=0)
+
+
+Base.metadata.create_all(bind=engine)

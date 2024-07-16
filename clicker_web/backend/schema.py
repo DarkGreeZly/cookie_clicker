@@ -1,17 +1,17 @@
 from pydantic import BaseModel
+from typing import Optional
 
 
-class UserBase(BaseModel):
-    telegram_id: str
+class UserCreate(BaseModel):
+    user_name: str
+    password: str
 
-class UserCreate(UserBase):
-    score: int
+class UserInDB(UserCreate):
+    hashed_password: str
 
-class User(UserBase):
-    id: int
-    name: str
-    telegram_id: str
-    score: int
+class Token(BaseModel):
+    access_token: str
+    token_type: str
 
-    class Config:
-        orm_mode = True
+class TokenData(BaseModel):
+    user_name: Optional[str] = None
