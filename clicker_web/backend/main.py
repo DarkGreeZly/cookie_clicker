@@ -7,7 +7,7 @@ from datetime import datetime, timedelta, timezone
 from typing import Optional, Annotated, List
 from fastapi.middleware.cors import CORSMiddleware
 import models
-from schema import UserCreate, Token, TokenData, UserInDB
+from schema import UserCreate, Token, TokenData, UserInDB, Score
 from config import engine, ALGORITHM, ACCESS_TOKEN_EXPIRE_MINUTES, SECRET_KEY, SessionLocal
 
 
@@ -133,4 +133,16 @@ async def read_users_me(current_user: Annotated[UserCreate, Depends(get_current_
     current_user = UserCreate(username=current_user.username, password=current_user.hashed_password, score=current_user.score, disabled=current_user.disabled)
     return current_user
 
+
+@app.post("/save")
+async def save_data(db: db_dependency, score: Score):
+    user = get_user(db, score.username)
+    user.score = score.score
+    db.commit()
+    return "success"
+
+
+@app.get("/load")
+async def load_data(current_user: Annotated[UserCreate, Depends(get_current_active_user)]):
+    return current_user.score
         
