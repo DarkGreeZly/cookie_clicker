@@ -3,8 +3,10 @@ from typing import Optional
 
 
 class UserCreate(BaseModel):
-    user_name: str
+    username: str
     password: str
+    score: int
+    disabled: bool = False
 
 class UserInDB(UserCreate):
     hashed_password: str
@@ -14,4 +16,4 @@ class Token(BaseModel):
     token_type: str
 
 class TokenData(BaseModel):
-    user_name: Optional[str] = None
+    username: Optional[str] = None
